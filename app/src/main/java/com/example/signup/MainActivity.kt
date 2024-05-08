@@ -7,8 +7,10 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.ViewCompat
+
+
         lateinit var usname: EditText
         lateinit var email:EditText
         lateinit var pass:EditText
@@ -38,6 +40,8 @@ class MainActivity : AppCompatActivity() {
 
             if (Username.isEmpty()||Email.isEmpty()||Pass.isEmpty()||Conpass.isEmpty()){
                 Toast.makeText(this, "Please fill all the filds",Toast.LENGTH_SHORT).show()
+            }else if(Pass != Conpass){
+                Toast.makeText(this, "password did not match", Toast.LENGTH_SHORT).show()
             }else{
                 Toast.makeText(this, "Sign up complete",Toast.LENGTH_SHORT).show()
             }
